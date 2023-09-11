@@ -1,0 +1,50 @@
+﻿<Window x:Class="Pogoda.main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pogoda"
+        mc:Ignorable="d"
+        Title="main" Height="450" Width="700">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Text="Погода в городе" FontSize="40" TextAlignment="Center" Margin="10,20,10,20"/>
+        <ComboBox Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" x:Name="City_name" FontSize="25" Margin="200,30,10,90" SelectionChanged="City_name_SelectionChanged"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Данные" FontSize="20" TextAlignment="Center"/>
+            <DatePicker Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="Data_now" FontSize="23"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Ветер:" FontSize="22"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Вер. осадков:" FontSize="22"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Влажность:" FontSize="22"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="wind_" Text="5 м\с" FontSize="22"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="prec_" Text="50%" FontSize="22"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="hum_" Text="5%" FontSize="22"/>
+        </Grid>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="+20" FontSize="70" TextAlignment="Center" VerticalAlignment="Center" x:Name="tempru"/>
+    </Grid>
+</Window>
